@@ -9,14 +9,22 @@ export default function Home() {
         <div className="container heroGrid">
           {/* Left */}
           <div>
-            <span className="badge">Artificial Intelligence / Data Science</span>
+            <span className="badge">
+              Artificial Intelligence / Data Science
+            </span>
+
             <h1 style={{ marginTop: 14 }}>Portfolio</h1>
-            <p>Data-driven projects across forecasting, analytics, and human-centered AI.</p>
+
+            <p>
+              Data-driven projects across forecasting, analytics, and
+              human-centered AI.
+            </p>
 
             <div className="btnRow">
               <a className="btn btnPrimary" href="#projects">
                 View Projects
               </a>
+
               <a
                 className="btn"
                 href="https://github.com/donghyun18"
@@ -25,9 +33,23 @@ export default function Home() {
               >
                 GitHub
               </a>
-              <a className="btn" href="/Resume - Lee Donghyun.pdf" download>
-                Resume
-              </a>
+
+              {/* Resume Dropdown */}
+              <div className="resumeDropdown">
+                <button className="btn resumeButton" type="button">
+                  Resume ▾
+                </button>
+
+                <div className="resumeMenu">
+                  <a href="/Resume-UK-Donghyun-Lee.pdf" download>
+                    🇬🇧 UK Resume
+                  </a>
+
+                  <a href="/Resume-SG-Donghyun-Lee.pdf" download>
+                    🇸🇬 Singapore Resume
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -38,16 +60,30 @@ export default function Home() {
               src="/images/profile.png"
               alt="Donghyun Lee"
             />
+
             <div>
               <h3 className="heroName">Donghyun Lee</h3>
-              <p className="heroTag">MSc Artificial Intelligence • Leeds, UK</p>
 
-              <ul className="heroList">                
-                <li>MSc Artificial Intelligence — University of Leeds</li>
-                <li>BCompSc — University of Wollongong</li>
-                <li>Diploma in IT — SIM Global Education</li>
-                <li>SIM Multicultural Mix Club — Member (2024–2025)</li>
-                <li>Talk To Mirae Supporters — Korean Community SG (2024–2025)</li>
+              <p className="heroTag">
+                MSc Artificial Intelligence • Leeds, UK
+              </p>
+
+              <ul className="heroList">
+                <li>
+                  MSc Artificial Intelligence — University of Leeds
+                </li>
+                <li>
+                  BCompSc — University of Wollongong
+                </li>
+                <li>
+                  Diploma in IT — SIM Global Education
+                </li>
+                <li>
+                  SIM Multicultural Mix Club — Member (2024–2025)
+                </li>
+                <li>
+                  Talk To Mirae Supporters — Korean Community SG (2024–2025)
+                </li>
               </ul>
 
               <div className="heroLinks">
@@ -59,8 +95,13 @@ export default function Home() {
                 >
                   LinkedIn
                 </a>
+
                 <span className="heroDot">•</span>
-                <a className="heroLink" href="mailto:wm07247@gmail.com">
+
+                <a
+                  className="heroLink"
+                  href="mailto:wm07247@gmail.com"
+                >
                   Email
                 </a>
               </div>
@@ -73,6 +114,7 @@ export default function Home() {
       <section id="projects" className="section">
         <div className="container">
           <h2>Featured Projects</h2>
+
           <div className="grid grid2" style={{ marginTop: 14 }}>
             {projects.map((p) => (
               <ProjectCard key={p.id} project={p} />
@@ -86,7 +128,11 @@ export default function Home() {
         <div className="container">
           <div className="sectionHeader">
             <h2>Additional Projects</h2>
-            <p className="muted">Smaller web projects (code available, deployment in progress).</p>
+
+            <p className="muted">
+              Full-stack and web development projects with live deployments
+              and source code.
+            </p>
           </div>
 
           <div className="grid grid2" style={{ marginTop: 14 }}>
@@ -107,12 +153,16 @@ export default function Home() {
                   ))}
                 </div>
 
-                {/* ✅ Mood Diary처럼 showcase가 있으면 “Live demo planned” 대신 Showcase 보여주기 */}
+                {/* Mood Diary처럼 showcase가 있으면 Showcase 보여주기 */}
                 {p.showcase ? (
                   <div className="showcase">
-                    <h4 className="showcaseTitle"> GIF + Notes</h4>
+                    <h4 className="showcaseTitle">GIF + Notes</h4>
+
                     {p.showcase.note ? (
-                      <p className="miniHint" style={{ marginTop: 6 }}>
+                      <p
+                        className="miniHint"
+                        style={{ marginTop: 6 }}
+                      >
                         {p.showcase.note}
                       </p>
                     ) : null}
@@ -137,16 +187,21 @@ export default function Home() {
 
                       {p.showcase.highlights?.length ? (
                         <ul className="showcaseList">
-                          {p.showcase.highlights.slice(0, 4).map((x, i) => (
-                            <li key={i}>{x}</li>
-                          ))}
+                          {p.showcase.highlights
+                            .slice(0, 4)
+                            .map((x, i) => (
+                              <li key={i}>{x}</li>
+                            ))}
                         </ul>
                       ) : null}
                     </div>
                   </div>
                 ) : null}
 
-                <div className="btnRow" style={{ marginTop: 14 }}>
+                <div
+                  className="btnRow"
+                  style={{ marginTop: 14 }}
+                >
                   <a
                     className="btn btnPrimary"
                     href={p.github}
@@ -157,11 +212,18 @@ export default function Home() {
                   </a>
 
                   {p.demo ? (
-                    <a className="btn" href={p.demo} target="_blank" rel="noreferrer">
+                    <a
+                      className="btn"
+                      href={p.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       Live Demo
                     </a>
                   ) : p.showcase ? null : (
-                    <span className="miniHint">Live demo planned</span>
+                    <span className="miniHint">
+                      Live demo planned
+                    </span>
                   )}
                 </div>
               </div>
@@ -174,20 +236,34 @@ export default function Home() {
       <section id="skills" className="section">
         <div className="container">
           <h2>Skills</h2>
-          <div className="grid grid2" style={{ marginTop: 14 }}>
+
+          <div
+            className="grid grid2"
+            style={{ marginTop: 14 }}
+          >
             <div className="card">
               <h3>Data / ML</h3>
+
               <ul className="list">
-                <li>Pandas, NumPy, scikit-learn, XGBoost, Prophet</li>
-                <li>TensorFlow / Keras (modeling, tuning with Keras Tuner)</li>
-                <li>Regression, Time-series forecasting, evaluation (RMSE/MAE)</li>
+                <li>
+                  Pandas, NumPy, scikit-learn, XGBoost, Prophet
+                </li>
+                <li>
+                  TensorFlow / Keras (modeling, tuning with Keras Tuner)
+                </li>
+                <li>
+                  Regression, Time-series forecasting, evaluation (RMSE/MAE)
+                </li>
               </ul>
             </div>
 
             <div className="card">
               <h3>Tools</h3>
+
               <ul className="list">
-                <li>Git/GitHub, Jupyter Notebook, VS Code</li>
+                <li>
+                  Git/GitHub, Jupyter Notebook, VS Code
+                </li>
               </ul>
             </div>
           </div>
@@ -198,19 +274,28 @@ export default function Home() {
       <section id="about" className="section">
         <div className="container">
           <h2>About</h2>
-          <div className="card" style={{ marginTop: 14 }}>
+
+          <div
+            className="card"
+            style={{ marginTop: 14 }}
+          >
             <p>
-              I’m an MSc Artificial Intelligence student at the University of Leeds, with a
-              background in Big Data and Computer Science. I enjoy building data-driven projects
-              that connect machine learning and AI with real-world decision-making, particularly
-              across forecasting, analytics, and human-centered applications.
+              I’m an MSc Artificial Intelligence student at the University
+              of Leeds, with a background in Big Data and Computer Science.
+              I enjoy building data-driven projects that connect machine
+              learning and AI with real-world decision-making, particularly
+              across forecasting, analytics, and human-centered
+              applications.
             </p>
+
             <p>
-              My project experience includes machine learning, time-series forecasting, data
-              visualization, and AI-assisted web applications. Alongside technical work, I have
-              collaborated in multicultural and team-based environments, strengthening my ability
-              to communicate ideas clearly, contribute effectively to group projects, and continue
-              developing toward AI and data-focused roles.
+              My project experience includes machine learning, time-series
+              forecasting, data visualization, and AI-assisted web
+              applications. Alongside technical work, I have collaborated
+              in multicultural and team-based environments, strengthening
+              my ability to communicate ideas clearly, contribute
+              effectively to group projects, and continue developing toward
+              AI and data-focused roles.
             </p>
           </div>
         </div>
@@ -220,14 +305,24 @@ export default function Home() {
       <section id="contact" className="section">
         <div className="container">
           <h2>Contact</h2>
-          <div className="card" style={{ marginTop: 14 }}>
+
+          <div
+            className="card"
+            style={{ marginTop: 14 }}
+          >
             <p style={{ marginBottom: 14 }}>
-              Feel free to reach out for collaboration, research opportunities, or graduate study.
+              Feel free to reach out for collaboration, research
+              opportunities, or graduate study.
             </p>
+
             <div className="btnRow">
-              <a className="btn btnPrimary" href="mailto:wm07247@gmail.com">
+              <a
+                className="btn btnPrimary"
+                href="mailto:wm07247@gmail.com"
+              >
                 Email
               </a>
+
               <a
                 className="btn"
                 href="https://www.linkedin.com/in/donghyunlee031a/"
@@ -236,6 +331,7 @@ export default function Home() {
               >
                 LinkedIn
               </a>
+
               <a
                 className="btn"
                 href="https://github.com/donghyun18"
@@ -251,7 +347,9 @@ export default function Home() {
 
       {/* ===== Footer ===== */}
       <div className="footer">
-        <div className="container">© 2026 Donghyun Lee</div>
+        <div className="container">
+          © 2026 Donghyun Lee
+        </div>
       </div>
     </>
   );

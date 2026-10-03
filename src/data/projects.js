@@ -94,40 +94,63 @@ export const projects = [
 
 export const additionalProjects = [
   {
-  id: "mood-diary",
-  title: "Mood Diary",
-  subtitle: "React journaling app (AI-assisted)",
-  description:
-    "A journaling web app that helps users reflect on emotions and track mood patterns over time.",
-  tech: ["TypeScript", "TailwindCSS", "UI/UX", "OpenAI GPT API", "Recharts"],
+    id: "mood-diary",
+    title: "Mood Diary",
+    subtitle: "React journaling app (AI-assisted)",
+    description:
+      "A journaling web app that helps users reflect on emotions and track mood patterns over time.",
 
-  github: "https://github.com/donghyun18/AI-Mood-Diary",
-  demo: "https://ai-mood-diary-3j32.vercel.app/",
+    tech: [
+      "TypeScript",
+      "TailwindCSS",
+      "UI/UX",
+      "OpenAI GPT API",
+      "Recharts"
+    ],
 
-  showcase: {
-    screenshots: [
-      // 예: "/showcase/mood-1.png", "/showcase/mood-2.png"
-    ],
-    gif: "/showcase/mood-demo.gif",
-    highlights: [
-      "Input → JSON result (emotion, confidence, one-line advice)",
-      "GPT prompt structured to return STRICT JSON",
-      "React + TypeScript UI with clean journaling flow",
-    ],
-    note: "Live web app available. Media walkthrough also included below.",
+    github: "https://github.com/donghyun18/AI-Mood-Diary",
+    demo: "https://ai-mood-diary-3j32.vercel.app/",
+
+    showcase: {
+      screenshots: [],
+      gif: "/showcase/mood-demo.gif",
+      highlights: [
+        "Input → JSON result (emotion, confidence, one-line advice)",
+        "GPT prompt structured to return STRICT JSON",
+        "React + TypeScript UI with clean journaling flow",
+      ],
+      note: "Live web app available. Media walkthrough also included below.",
+    },
   },
-},
 
   {
     id: "pet-heaven",
     title: "Pet Heaven",
-    subtitle: "Frontend and Backend website project",
+    subtitle: "Full-Stack MERN Web Application",
     description:
-      "A multi-page website project featuring adoption, volunteer, donation, and pet release flows.",
+      "A full-stack animal shelter platform featuring adoption, volunteering, donation, and pet release workflows, with user authentication, email verification, and persistent cloud data storage.",
 
-    tech: ["React", "JavaScript", "CSS", "MongoDB"],
+    tech: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB Atlas",
+      "JWT",
+      "Render"
+    ],
 
     github: "https://github.com/donghyun18/React-Data-Management",
-    demo: "https://react-project-alpha-topaz.vercel.app/",
+    demo: "https://pet-heaven-s0d7.onrender.com",
+
+    showcase: {
+      gif: "/showcase/pet-heaven-demo.gif",
+      note: "Full-stack workflow demonstration",
+      highlights: [
+        "Adoption, volunteer, donation, and pet release workflows",
+        "JWT-based user authentication",
+        "Email verification during signup",
+        "MongoDB Atlas cloud data persistence",
+      ],
+    },
   },
 ];
